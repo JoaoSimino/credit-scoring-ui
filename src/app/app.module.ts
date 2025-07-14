@@ -2,6 +2,7 @@ import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDete
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { ClienteModule } from './cliente/cliente.module';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 
@@ -10,6 +11,7 @@ import { App } from './app';
     App
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ClienteModule
