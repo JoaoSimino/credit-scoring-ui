@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">Cadastro de Clientes</h2>
+
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+  <label for="nome">Nome:</label>
+  <input id="nome" formControlName="nome" />
+
+  <label for="renda">Renda Mensal:</label>
+  <input id="renda" formControlName="rendaMensal" />
+
+  <label for="idade">Idade:</label>
+  <input id="idade" formControlName="idade" />
+
+  <label for="historico">Histórico de Crédito:</label>
+  <input id="historico" formControlName="historicoCreditoSimulado" />
+
+  <button type="submit">Salvar</button>
+</form>
