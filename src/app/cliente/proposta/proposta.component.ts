@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -15,10 +16,14 @@ export class PropostaComponent {
   };
   constructor(private http: HttpClient) {}
 
-  enviarProposta() {
+  enviarProposta(form: NgForm) {
     this.http.post('http://localhost:5205/api/Proposta', this.proposta)
       .subscribe({
-        next: (res) => console.log('Proposta enviada!', res),
+        next: (res) => {
+          console.log('Proposta enviada!', res);
+          // Limpa os campos após envio bem-sucedido
+          form.resetForm();
+        },
         error: (err) => console.error('Erro ao enviar proposta', err)
       });
   }
