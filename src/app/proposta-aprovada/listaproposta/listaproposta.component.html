@@ -1,0 +1,18 @@
+<table class="propostas-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente ID</th>
+      <th>Valor Aprovado</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proposta of propostas">
+      <td>{{ proposta.id }}</td>
+      <td>{{ proposta.clienteId }}</td>
+      <td>R$ {{ proposta.valorAprovado | number:'1.2-2' }}</td>
+      <td>{{ proposta.statusProcessamento }}</td>
+    </tr>
+  </tbody>
+</table>

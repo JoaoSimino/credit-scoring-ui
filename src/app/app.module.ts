@@ -5,6 +5,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing-module';
+import { ListapropostaComponent } from './proposta-aprovada/listaproposta/listaproposta.component';
+
 import { App } from './app';
 
 @NgModule({
@@ -15,7 +17,8 @@ import { App } from './app';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ClienteModule
+    ClienteModule,
+    ListapropostaComponent
   ],
   providers: [
     provideHttpClient(withFetch()),

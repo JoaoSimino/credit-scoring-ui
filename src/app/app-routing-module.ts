@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaComponent  } from './cliente/lista/lista.component';
 import { PropostaComponent  } from './cliente/proposta/proposta.component';
-
+import { ListapropostaComponent  } from './proposta-aprovada/listaproposta/listaproposta.component';
 
 
 const routes: Routes = [
@@ -18,6 +18,7 @@ const routes: Routes = [
   },
   { path: 'clientes/lista', component: ListaComponent  }, 
   { path: 'clientes/proposta', component: PropostaComponent  }, 
+  { path: 'proposta/aprovada', component: ListapropostaComponent  }
 ];
 
 @NgModule({
