@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListaComponent  } from './cliente/lista/lista.component';
+
+
 
 const routes: Routes = [
   {
@@ -11,7 +14,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'cliente',
     pathMatch: 'full'
-  }
+  },
+  { path: 'clientes/lista', component: ListaComponent  }, 
 ];
 
 @NgModule({

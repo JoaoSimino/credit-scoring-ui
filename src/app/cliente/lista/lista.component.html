@@ -1,0 +1,22 @@
+<h2>Lista de Clientes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th> 
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Renda</th>
+      <th>Histórico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.id }}</td> 
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.idade }}</td>
+      <td>{{ cliente.rendaMensal | currency:'BRL' }}</td>
+      <td>{{ cliente.historicoCreditoSimulado }}</td>
+    </tr>
+  </tbody>
+</table>
