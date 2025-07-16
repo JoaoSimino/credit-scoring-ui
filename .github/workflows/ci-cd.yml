@@ -22,11 +22,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Mostrar diretório atual
-        run: pwd
-
       - name: Build Docker image
-        run: docker build -f Docker/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/apigateway-api:latest .
+        run: |
+          docker build -f "${{ github.workspace }}/Docker/Dockerfile" -t ${{ secrets.DOCKERHUB_USERNAME }}/apigateway-api:latest "${{ github.workspace }}"
+
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/apigateway-api:latest 
