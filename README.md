@@ -1,59 +1,82 @@
 # CreditScoringUi
+[![Build Status](https://github.com/JoaoSimino/credit-scoring-ui/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/JoaoSimino/credit-scoring-ui/actions/workflows/ci-cd.yml)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
-## Development server
 
-To start a local development server, run:
+## Sumário
+
+- [Descrição](#descrição)
+- [Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Pré-requisitos](#pré-requisitos)
+- [Como rodar](#como-rodar)
+- [Contribuindo](#contribuindo)
+- [Pipeline CI/CD](#pipeline-cicd)
+- [Licença](#licença)
+
+## Descrição
+
+Este projeto foi gerado com o Angular CLI, versão 20.1.0, e faz parte de um ecossistema de microsserviços voltado para operações financeiras. Com Objetivo de desenvolver uma aplicação front-end fluida e intuitiva que permita ao cliente final:
+
+- Realizar cadastro de dados pessoais
+- Solicitar propostas de crédito
+- Selecionar a opção de pagamento mais adequada
+- Acompanhar o status de faturas em tempo real
+
+## Arquitetura e Tecnologias
+- Estrutura modular com navegação por rotas Angular
+- Consumo de APIs REST de forma desacoplada
+- Integração assíncrona e transparente com backend via API Gateway
+- Cada tela do front-end se conecta somente ao serviço necessário, mantendo a abstração para o usuário final
+
+## Funcionalidades
+
+A aplicação se comunica de forma transparente com um API Gateway construído com YARP (.NET). Esse gateway roteia dinamicamente as requisições para os serviços corretos, garantindo desacoplamento entre o front-end e os microsserviços subjacentes, como:
+- Serviço de Cadastro de Clientes e  Análise de Crédito
+- Serviço de Faturamento
+- Serviço de Pagamento (futuramente)
+
+## Pré-requisitos
+
+- Angular 20.1.0
+- TypeScript
+
+## Como rodar
+
+Clone o repositório e rode o comando:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Assim que o servidor estiver em execução, abra seu navegador e navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente sempre que você modificar qualquer um dos arquivos de origem.
 
-## Code scaffolding
+## Contribuindo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Contribuições são bem-vindas! Para contribuir:
 
-```bash
-ng generate component component-name
-```
+1. Fork este repositório
+2. Crie uma branch feature com o padrão `feature/nome-da-feature`
+3. Faça commits claros e descritivos
+4. Abra um Pull Request detalhando as alterações
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Por favor, siga o padrão de commits [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-```bash
-ng generate --help
-```
+## Pipeline CI/CD
 
-## Building
+O projeto utiliza GitHub Actions para:
 
-To build the project run:
+- Validar o código a cada push/PR na branch `main`
+- Executar testes automaticamente
+- Buildar e preparar o pacote para release, e subir ja um container atualizar para o Docker hub. 
 
-```bash
-ng build
-```
+O workflow está disponível em `.github/workflows/ci-cd.yml`.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Licença
 
-## Running unit tests
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Obrigado por usar o CreditScoringUi!  
+Para dúvidas ou sugestões, abra uma issue ou entre em contato comigo.
