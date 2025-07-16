@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { App } from './app';
+import { ListaparcelaComponent } from './parcela/listaparcela/listaparcela.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { App } from './app';
     ClienteModule,
     FormsModule,
     ListapropostaComponent,
-    SelecaoopcaoComponent
+    SelecaoopcaoComponent,
+    ListaparcelaComponent
   ],
   providers: [
     provideHttpClient(withFetch()),

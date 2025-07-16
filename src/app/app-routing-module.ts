@@ -4,6 +4,7 @@ import { ListaComponent  } from './cliente/lista/lista.component';
 import { PropostaComponent  } from './cliente/proposta/proposta.component';
 import { ListapropostaComponent  } from './proposta-aprovada/listaproposta/listaproposta.component';
 import { SelecaoopcaoComponent } from './proposta-aprovada/selecaoopcao/selecaoopcao.component';
+import { ListaparcelaComponent } from './parcela/listaparcela/listaparcela.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'clientes/lista', component: ListaComponent  }, 
   { path: 'clientes/proposta', component: PropostaComponent  }, 
   { path: 'proposta/aprovada', component: ListapropostaComponent  },
-  { path: 'proposta/seleciona-opcao', component: SelecaoopcaoComponent  }
+  { path: 'proposta/seleciona-opcao', component: SelecaoopcaoComponent  },
+  { path: 'clientes/parcelas', component: ListaparcelaComponent  }
 ];
 
 @NgModule({

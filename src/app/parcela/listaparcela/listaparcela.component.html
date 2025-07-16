@@ -1,0 +1,28 @@
+<h2>Buscar Parcelas por Cliente</h2>
+
+<label for="clienteId">ID do Cliente:</label>
+<input id="clienteId" [(ngModel)]="clienteId" placeholder="Digite o ID do cliente" />
+
+<button (click)="buscarParcelas()">Buscar</button>
+
+<table *ngIf="parcelas.length > 0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Valor</th>
+      <th>Vencimento</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parcela of parcelas">
+      <td>{{ parcela.numero }}</td>
+      <td>R$ {{ parcela.valor | number:'1.2-2' }}</td>
+      <td>{{ parcela.vencimento | date:'shortDate' }}</td>
+      <td>{{ parcela.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="buscando">Buscando parcelas...</p>
+<p *ngIf="!buscando && parcelas.length === 0 && clienteId">Nenhuma parcela encontrada.</p>
