@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -f "${{ github.workspace }}/Docker/Dockerfile" -t ${{ secrets.DOCKERHUB_USERNAME }}/apigateway-api:latest "${{ github.workspace }}"
+          docker build -f "Docker/Dockerfile" -t ${{ secrets.DOCKERHUB_USERNAME }}/apigateway-api:latest "C:\Users\JoaoSimino\source\repos\credit-scoring-ui"
 
 
       - name: Push Docker image
