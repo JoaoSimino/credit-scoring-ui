@@ -1,0 +1,30 @@
+<h2>Selecionar Opção de Pagamento</h2>
+
+<!-- Dropdown para selecionar proposta -->
+<label for="propostas">Selecione uma proposta aprovada:</label>
+<select id="propostas" [(ngModel)]="propostaSelecionadaId" (change)="onSelecionarProposta($event)">
+  <option value="">-- Selecione --</option>
+  <option *ngFor="let proposta of propostasAprovadas" [value]="proposta.id">
+    {{ proposta.id }}
+  </option>
+</select>
+
+<!-- Dropdown para selecionar opção de pagamento -->
+<div *ngIf="opcoesPagamento.length > 0" style="margin-top: 20px;">
+  <label for="opcoes">Selecione uma opção de pagamento:</label>
+  <select id="opcoes" [(ngModel)]="opcaoSelecionada">
+    <option value="">-- Selecione --</option>
+    <option *ngFor="let opcao of opcoesPagamento" [ngValue]="opcao">
+      {{ opcao.quantidadeParcelas }}x de R$ {{ opcao.valorParcela | number:'1.2-2' }}
+    </option>
+  </select>
+
+  <!-- Detalhes da opção selecionada -->
+  <div *ngIf="opcaoSelecionada" style="margin-top: 20px;">
+    <p>Total com juros: R$ {{ opcaoSelecionada?.valorTotalComJuros | number:'1.2-2' }}</p>
+    <p *ngIf="opcaoSelecionada?.comJuros">Com juros</p>
+    <p *ngIf="!opcaoSelecionada?.comJuros">Sem juros</p>
+
+    <button (click)="onEnviar()">Confirmar</button>
+  </div>
+</div>
