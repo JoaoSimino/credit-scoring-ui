@@ -25,7 +25,7 @@ export class FormularioComponent {
       const cliente = this.clienteForm.value;
       console.log('Cliente cadastrado:', this.clienteForm.value);
 
-      this.http.post('http://localhost:5062/api/Cliente', cliente)
+      this.http.post('http://apigateway:5062/api/Cliente', cliente)
         .subscribe({
           next: () => {
             alert('Cliente cadastrado com sucesso!');

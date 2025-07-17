@@ -26,7 +26,7 @@ export class ListapropostaComponent implements OnInit {
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.http.get<PropostaAprovada[]>('http://localhost:5062/api/PropostaAprovada') // Use seu endpoint correto aqui
+    this.http.get<PropostaAprovada[]>('http://apigateway:5062/api/PropostaAprovada') // Use seu endpoint correto aqui
       .subscribe(data => {
         this.propostas = data;
         this.cdr.detectChanges();

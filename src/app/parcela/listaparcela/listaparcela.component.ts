@@ -33,7 +33,7 @@ export class ListaparcelaComponent implements OnInit{
     if (!this.clienteId) return;
 
     this.buscando = true;
-    this.http.get<Parcela[]>(`http://localhost:5062/api/Parcelas/cliente/${this.clienteId}`)
+    this.http.get<Parcela[]>(`http://apigateway:5062/api/Parcelas/cliente/${this.clienteId}`)
       .subscribe({
         next: data => {
           this.parcelas = data;
