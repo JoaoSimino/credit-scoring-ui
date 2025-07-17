@@ -33,7 +33,7 @@ export class SelecaoopcaoComponent implements OnInit {
   constructor(private http: HttpClient,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.http.get<PropostaAprovada[]>('http://apigateway:5062/api/PropostaAprovada')
+    this.http.get<PropostaAprovada[]>('http://apigateway/api/PropostaAprovada')
       .subscribe(data => {
         this.propostasAprovadas = data;
         this.cdr.detectChanges();
@@ -43,7 +43,7 @@ export class SelecaoopcaoComponent implements OnInit {
   onSelecionarProposta(event: any): void {
     if (this.propostaSelecionadaId) {
       this.http.get<OpcaoPagamento[]>(
-        `http://apigateway:5062/api/PropostaAprovada/${this.propostaSelecionadaId}/opcoes-de-pagamento`
+        `http://apigateway/api/PropostaAprovada/${this.propostaSelecionadaId}/opcoes-de-pagamento`
       ).subscribe(data => {
         this.opcoesPagamento = data;
         this.opcaoSelecionada = null;
@@ -55,7 +55,7 @@ export class SelecaoopcaoComponent implements OnInit {
   onEnviar(): void {
     if (!this.opcaoSelecionada || !this.propostaSelecionadaId) return;
   
-    const url = `http://apigateway:5062/api/PropostaAprovada/${this.propostaSelecionadaId}/opcao-de-pagamento-selecionada`;
+    const url = `http://apigateway/api/PropostaAprovada/${this.propostaSelecionadaId}/opcao-de-pagamento-selecionada`;
   
     this.http.post(url, this.opcaoSelecionada).subscribe({
       next: () => {
