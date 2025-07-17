@@ -17,7 +17,7 @@ export class PropostaComponent {
   constructor(private http: HttpClient) {}
 
   enviarProposta(form: NgForm) {
-    this.http.post('http://apigateway/api/Proposta', this.proposta)
+    this.http.post('http://localhost:5062/api/Proposta', this.proposta)
       .subscribe({
         next: (res) => {
           console.log('Proposta enviada!', res);
